@@ -16,7 +16,9 @@ assuming php version is `8.2` and
 
 then we need to run php with following command
 
- ```/usr/local/lsws/lsphp82/bin/php```
+```bash
+/usr/local/lsws/lsphp82/bin/php
+```
 
 example: to run composer install
 ```bash
@@ -42,7 +44,7 @@ Always use the `demo` branch for deploying into demo server
 
 ### all other data
 
-```
+```bash
 /usr/local/lsws/lsphp82/bin/php artisan db:seed --class=DemoSeeder
 ```
 
