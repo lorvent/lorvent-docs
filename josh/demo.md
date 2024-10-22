@@ -39,7 +39,7 @@ Always use the `demo` branch for deploying into demo server
 ### users
 
 ```bash
-/usr/local/lsws/lsphp82/bin/php artisan db:seed --class=UsersSeeder
+/usr/local/lsws/lsphp82/bin/php artisan db:seed --class=DatabaseSeeder
 ```
 
 ### all other data
