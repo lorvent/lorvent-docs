@@ -2,21 +2,47 @@
 
 Instructions for deploying into demo server
 
+## Installation
+
+### cyberpanel
+
+#### login as josha2140
+
+first we should login as current user
+``` sudo su josha2140```
+
+assuming php version is `8.2` and 
+`composer` is located at `/usr/bin/composer`, 
+
+then we need to run php with following command
+
+ ```/usr/local/lsws/lsphp82/bin/php```
+
+example: to run composer install
+```bash
+/usr/local/lsws/lsphp82/bin/php /usr/bin/composer install
+```
+
+
+example: php artisan migrate
+```bash
+/usr/local/lsws/lsphp82/bin/php artisan migrate
+``` 
+
 ## Branch
 Always use the `demo` branch for deploying into demo server
 
-## Extra files
-It should have following extra files
+## Dummy Data
 
-- `routes/demo.php` - for auto-login user 1
-- `resources/views/layouts/_ga.blade.php` - for Google Analytics
-
-## Composer extra installation
-Just to avoid polluting existing composer.lock file, we should create a new one for demo server
-
-we need to install package but it should not be added to composer.lock file
+### users
 
 ```bash
-composer require --no-update <package-name>
+/usr/local/lsws/lsphp82/bin/php artisan db:seed --class=UsersSeeder
+```
+
+### all other data
+
+```
+/usr/local/lsws/lsphp82/bin/php artisan db:seed --class=DemoSeeder
 ```
 
